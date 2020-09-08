@@ -28,8 +28,7 @@ describe("login-test", function () {
     await login(driver);
 
     await driver.wait(until.urlContains(actualUrl), 4000);
-    expectedUrl = await driver.getCurrentUrl((currentUrl) => currentUrl);
-    console.log(expectedUrl);
+    expectedUrl = await driver.getCurrentUrl();
     await expect(actualUrl).to.equal(expectedUrl);
   });
 });
